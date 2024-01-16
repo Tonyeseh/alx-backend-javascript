@@ -1,5 +1,5 @@
 namespace Subjects {
-    export class Subject implements Teacher {
+    export class Subject {
         teacher: Subjects.Teacher;
 
         set setTeacher(teacher: Subjects.Teacher){
