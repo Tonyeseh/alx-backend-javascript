@@ -1,4 +1,4 @@
-import createInt8TypedArray from "./5-typed_arrays.js";
+import createInt8TypedArray from './5-typed_arrays'
 
 test("createInt8TypedArray throws an error with `Position outside range` statement", () => {
   expect(() => {
