@@ -1,18 +1,14 @@
 const fsPromise = require('fs').promises;
 
-async function countStudents (fileName) {
+async function countStudents(fileName) {
   const result = [];
   try {
     const data = await fsPromise.readFile(fileName, 'utf8');
     const dataArray = data.split('\n').slice(1, -1).filter((row) => row !== '');
 
-    const newArr = dataArray.map((row) => {
-      return row.split(',');
-    });
+    const newArr = dataArray.map((row) => row.split(','));
 
-    const uniqueFields = new Set(newArr.map((row) => {
-      return row[row.length - 1];
-    }));
+    const uniqueFields = new Set(newArr.map((row) => row[row.length - 1]));
 
     result.push(`Number of students: ${dataArray.length}`);
 

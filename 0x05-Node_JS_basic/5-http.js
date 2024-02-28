@@ -1,8 +1,9 @@
 const app = require('http');
-const argv = process.argv;
+
+const { argv } = process;
 const countStudents = require('./3-read_file_async');
 
-app.createServer(function (req, res) {
+app.createServer((req, res) => {
   res.setHeader('Content-Type', 'text/plain');
 
   if (req.url === '/') {

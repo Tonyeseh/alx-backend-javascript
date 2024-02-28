@@ -1,17 +1,13 @@
 const fs = require('fs');
 
-function countStudents (fileName) {
+function countStudents(fileName) {
   try {
     const data = fs.readFileSync(fileName, 'utf8');
     const dataArray = data.split('\n').slice(1, -1).filter((row) => row !== '');
 
-    const newArr = dataArray.map((row) => {
-      return row.split(',');
-    });
+    const newArr = dataArray.map((row) => row.split(','));
 
-    const uniqueFields = new Set(newArr.map((row) => {
-      return row[row.length - 1];
-    }));
+    const uniqueFields = new Set(newArr.map((row) => row[row.length - 1]));
 
     console.log(`Number of students: ${dataArray.length}`);
 
